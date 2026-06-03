@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Debugging Example</title>
+
+<script>
+
+function calculateTotal(){
+
+let ticketPrice=200;
+
+let quantity=3;
+
+let total=ticketPrice*quantity;
+
+console.log("Ticket Price:",ticketPrice);
+
+console.log("Quantity:",quantity);
+
+console.log("Total Amount:",total);
+
+document.getElementById("result").innerHTML=
+
+"Total Amount = ₹" + total;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Chrome DevTools Debugging Demo</h2>
+
+<button onclick="calculateTotal()">
+
+Calculate
+
+</button>
+
+<p id="result"></p>
+
+</body>
+</html>

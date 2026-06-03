@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Handling</title>
+
+<script>
+
+function validatePhone(){
+
+let phone=document.getElementById("phone").value;
+
+if(phone.length!=10){
+alert("Phone number should contain 10 digits");
+}
+
+}
+
+function showFee(){
+
+let event=document.getElementById("eventType").value;
+
+let fee=document.getElementById("fee");
+
+if(event=="Music"){
+fee.innerHTML="Fee: ₹500";
+}
+else if(event=="Sports"){
+fee.innerHTML="Fee: ₹300";
+}
+else{
+fee.innerHTML="Fee: ₹200";
+}
+
+}
+
+function submitForm(){
+alert("Registration Submitted Successfully");
+}
+
+function enlargeImage(img){
+img.style.width="400px";
+img.style.height="300px";
+}
+
+function countCharacters(){
+
+let text=document.getElementById("feedback").value;
+
+document.getElementById("counter").innerHTML=
+"Characters Typed: " + text.length;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Event Handling Demo</h2>
+
+Phone Number:
+
+<input
+type="text"
+id="phone"
+onblur="validatePhone()">
+
+<br><br>
+
+Select Event:
+
+<select
+id="eventType"
+onchange="showFee()">
+
+<option>Music</option>
+<option>Sports</option>
+<option>Workshop</option>
+
+</select>
+
+<p id="fee"></p>
+
+<button onclick="submitForm()">
+Submit
+</button>
+
+<br><br>
+
+<img
+src="https://via.placeholder.com/200"
+ondblclick="enlargeImage(this)"
+alt="Event Image">
+
+<p>Double click image to enlarge</p>
+
+<textarea
+id="feedback"
+onkeyup="countCharacters()"
+rows="5"
+cols="30"></textarea>
+
+<p id="counter">Characters Typed: 0</p>
+
+</body>
+</html>

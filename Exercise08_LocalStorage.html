@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Local Storage</title>
+
+<script>
+
+function savePreference(){
+
+let event=
+document.getElementById("event").value;
+
+localStorage.setItem(
+"preferredEvent",
+event
+);
+
+sessionStorage.setItem(
+"currentEvent",
+event
+);
+
+alert("Preference Saved");
+
+}
+
+function loadPreference(){
+
+let savedEvent=
+localStorage.getItem(
+"preferredEvent"
+);
+
+if(savedEvent){
+
+document.getElementById("event").value=
+savedEvent;
+
+}
+
+}
+
+function clearStorage(){
+
+localStorage.clear();
+
+sessionStorage.clear();
+
+alert("Preferences Cleared");
+
+}
+
+</script>
+
+</head>
+
+<body onload="loadPreference()">
+
+<h2>Save Event Preference</h2>
+
+<select id="event">
+
+<option>Music</option>
+<option>Sports</option>
+<option>Workshop</option>
+
+</select>
+
+<br><br>
+
+<button onclick="savePreference()">
+Save Preference
+</button>
+
+<button onclick="clearStorage()">
+Clear Preferences
+</button>
+
+</body>
+</html>
